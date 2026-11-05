@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://rajantank602.github.io/Tank-s-company-website/sitemap.xml
+Sitemap: https://tankscompany.com/sitemap.xml
