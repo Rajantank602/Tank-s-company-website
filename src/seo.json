@@ -1,0 +1,44 @@
+{
+  "siteUrl": "https://rajantank602.github.io/Tank-s-company-website/",
+  "siteName": "Tank's company",
+  "alternateNames": [
+    "Tanks company",
+    "Tank's",
+    "Tanks",
+    "Tank's company automatic car wash machine",
+    "Tanks company automatic car wash machine"
+  ],
+  "keywords": "Tank's company, Tanks company, Tank's, Tanks, Tank's company automatic car wash machine, Tanks company automatic car wash machine, automatic car wash machine, car wash machine manufacturer, Tank's tiny, Ahmedabad",
+  "logo": "logo.svg",
+  "email": "connect@tankscompany.com",
+  "address": {
+    "streetAddress": "Shed 12, 13, Part 2, Parishikhar Cottage Industrial Estate, Opp. Ramol Toll Plaza, SP Ring Road",
+    "addressLocality": "Ahmedabad",
+    "addressRegion": "Gujarat",
+    "postalCode": "382449",
+    "addressCountry": "IN"
+  },
+  "pages": {
+    "home": {
+      "path": "",
+      "title": "Tank's company | Automatic Car Wash Machine Manufacturer",
+      "description": "Tank's company (Tanks company) manufactures automatic car wash machines in Ahmedabad, India. Meet Tank's tiny: a compact, contactless 360° gantry car wash with 22 bar pressure from 13 nozzles.",
+      "image": "tiny/00.png",
+      "imageAlt": "Render of Tank's tiny compact single-arm gantry car-wash machine."
+    },
+    "tiny": {
+      "path": "tiny/",
+      "title": "Tank's tiny | Automatic Car Wash Machine by Tank's company",
+      "description": "Tank's tiny by Tank's company (Tanks company) is a compact single-arm automatic car wash machine with contactless 360° coverage and 22 bar pressure from 13 nozzles, cleaning a car in around three minutes.",
+      "image": "tiny/00.png",
+      "imageAlt": "Render of Tank's tiny compact single-arm gantry car-wash machine."
+    },
+    "terrain": {
+      "path": "terrain/",
+      "title": "Tank's Terrain | Engineering Preview | Tank's company",
+      "description": "Tank's Terrain by Tank's company is taking shape. Explore an early engineering preview and get in touch with our team to learn more.",
+      "image": "terrain/1 (1).jpeg",
+      "imageAlt": "Early engineering preview of Tank's Terrain with a vehicle beneath the gantry."
+    }
+  }
+}
