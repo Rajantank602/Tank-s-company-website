@@ -1258,7 +1258,6 @@ button {
   height: min(600px, 68vw);
   min-height: 380px;
   overflow: hidden;
-  overscroll-behavior: contain;
   border: 1px solid rgba(117, 71, 47, 0.12);
   border-radius: 2rem;
   background:
@@ -1283,7 +1282,6 @@ button {
 
 .scene-shell--interactive {
   pointer-events: auto;
-  overscroll-behavior: contain;
 }
 
 .scene-shell--interactive canvas {
@@ -1315,37 +1313,6 @@ button {
   background: rgba(255, 253, 249, 0.88);
   color: var(--ink-soft);
   font-size: 0.78rem;
-}
-
-.model-viewer-buttons {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  pointer-events: auto;
-}
-
-.model-viewer-buttons button {
-  min-width: 2.45rem;
-  min-height: 2.45rem;
-  padding: 0.45rem 0.7rem;
-  border: 1px solid rgba(117, 71, 47, 0.2);
-  border-radius: var(--radius-full);
-  background: rgba(255, 253, 249, 0.94);
-  color: var(--ink);
-  font: inherit;
-  font-size: 0.82rem;
-  cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.model-viewer-buttons button:hover {
-  border-color: var(--primary);
-  background: var(--canvas);
-}
-
-.model-viewer-buttons .model-viewer-auto,
-.model-viewer-buttons .model-viewer-reset {
-  padding-inline: 0.85rem;
 }
 
 .model-caption {

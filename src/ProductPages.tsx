@@ -263,9 +263,9 @@ export function TinyProductPage() {
         <div className="product-page-model" aria-label="Interactive 3D render of Tank's tiny">
           <Suspense
             fallback={(
-              <p className="model-loading">
+              <p className="model-loading" role="status">
                 <span className="model-loading__drops" aria-hidden="true"><i /><i /><i /></span>
-                Loading 3D model…
+                <span className="sr-only">Loading 3D model</span>
               </p>
             )}
           >

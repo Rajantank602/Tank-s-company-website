@@ -43,39 +43,6 @@ type MachineModelProps = {
   interactive: boolean;
 };
 
-type ViewerActions = {
-  zoomIn: () => void;
-  zoomOut: () => void;
-  resetZoom: () => void;
-};
-
-function ViewerZoom({ actions }: { actions: MutableRefObject<ViewerActions | null> }) {
-  const { camera, invalidate } = useThree();
-
-  useEffect(() => {
-    const zoom = (factor: number) => {
-      camera.zoom = THREE.MathUtils.clamp(camera.zoom * factor, 0.65, 3);
-      camera.updateProjectionMatrix();
-      invalidate();
-    };
-    actions.current = {
-      zoomIn: () => zoom(1.2),
-      zoomOut: () => zoom(1 / 1.2),
-      resetZoom: () => {
-        camera.zoom = 1;
-        camera.updateProjectionMatrix();
-        invalidate();
-      },
-    };
-
-    return () => {
-      actions.current = null;
-    };
-  }, [actions, camera, invalidate]);
-
-  return null;
-}
-
 function CameraFit({
   radius,
   heroProgress,
@@ -464,7 +431,6 @@ export default function MachineScene({
     () => window.matchMedia('(max-width: 768px)').matches,
   );
   const shellRef = useRef<HTMLDivElement>(null);
-  const viewerActions = useRef<ViewerActions | null>(null);
   const defaultHeroProgress = useRef(1);
 
   useEffect(() => {
@@ -525,32 +491,22 @@ export default function MachineScene({
         />
         <Environment preset="studio" environmentIntensity={0.72} />
         {interactive && (
-          <>
-            <OrbitControls
-              makeDefault
-              autoRotate={autoRotate}
-              autoRotateSpeed={0.7}
-              enableDamping
-              enableRotate
-              enableZoom
-              enablePan={false}
-              minDistance={2}
-              maxDistance={20}
-              zoomSpeed={0.9}
-              onStart={() => setAutoRotate(false)}
-            />
-            <ViewerZoom actions={viewerActions} />
-          </>
+          // Rotate only: no wheel, pinch or button zoom, so scrolling over the model scrolls the page.
+          <OrbitControls
+            makeDefault
+            autoRotate={autoRotate}
+            autoRotateSpeed={0.7}
+            enableDamping
+            enableRotate
+            enableZoom={false}
+            enablePan={false}
+            onStart={() => setAutoRotate(false)}
+          />
         )}
       </Canvas>
       {interactive && (
-        <div className="model-viewer-controls" aria-label="3D model controls">
-          <p className="model-viewer-hint">Drag to rotate <span aria-hidden="true">·</span> Scroll to zoom</p>
-          <div className="model-viewer-buttons">
-            <button type="button" aria-label="Zoom out" onClick={() => viewerActions.current?.zoomOut()}>−</button>
-            <button type="button" aria-label="Zoom in" onClick={() => viewerActions.current?.zoomIn()}>+</button>
-
-          </div>
+        <div className="model-viewer-controls">
+          <p className="model-viewer-hint">Drag to rotate</p>
         </div>
       )}
     </div>
